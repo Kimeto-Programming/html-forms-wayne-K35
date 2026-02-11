@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Company Registration and Service Request Form</title>
+</head>
+<body>
+    <h1>Company Registration and Service Request Form</h1>
+    <p>Please fill in the details below to register your company and request services.</p>
+
+     <form  method="post" action="#">
+        <fieldset>
+            <legend><strong>Personal Information </strong></legend>
+            <label for="fullname">Full name:</label><br>
+            <input type="text" id="fullname" name="fullname" placeholder="Wayne Korir" required minlength="3" maxlength="50" pattern="[A-Z][a-z]\s[A-Z][a-z]" title="Username must have atleast one uppercase letter"><br>
+
+            <label for="email">Email:</label><br>
+            <input type="email" id="email" name="email" placeholder="korirwayne@gmail.com" required minlength="5" maxlength="100" pattern="[a-zA-Z0-9._%+-]+@curbox\.com$" title="Email must be in the format: roy.mars@curbox.com"><br>
+
+            <label for="phone">Phone:</label><br>
+            <input type="tel" id="phone" name="phone" placeholder="0746136888" required pattern="07[0-9]{8}" title="Phone number must be 10 digits starting with 07"><br>
+        </fieldset>
+        <br>
+        <fieldset>
+            <legend><strong>Company Information</strong></legend>
+            <label for="companyname">Company Name:</label><br> 
+            <input type="text" id="companyname" name="companyname" placeholder="WAYTECH" required minlength="2" maxlength="100"><br> 
+
+            <label for="companywebsite">Company Website:</label><br>
+            <input type="text" id="companywebsite" name="companywebsite" placeholder="https://www.waytech.com" required minlength="2" maxlength="100" pattern="https://www\.[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}" title="Website must be in the format: https://www.curbox.com"><br>  
+
+            <label for="companysize">Company Size:</label><br>
+            <select id="companysize" name="companysize" required>
+                    <option value="">Please choose an option</option>
+                    <option value="1-10">1-10 employees</option>
+                    <option value="11-50">11-50 employees</option>
+                    <option value="100+">100+ employees</option>
+                </select><br>
+
+                <label for="industry">Industry:</label><br>
+                <input type="text" id="industry" name="industry" list="industries" required>
+                <datalist id="industries">
+                    <option value="Primary">
+                    <option value="Secondary">
+                    <option value="Tertiary">
+                    <option value="Quaternary">
+                </datalist>
+                </fieldset><br>
+                <fieldset>
+                    <legend><strong>Service Request</strong></legend>
+                    <label for="servicetype">Type of Service:</label><br>
+                    <input type="radio" id="professionalservices" name="servicetype" value="professionalservices" required>
+                    <label for="professionalservices">Professional Services</label><br>
+                    <input type="radio" id="operationalandsupportservices" name="servicetype" value="operationalandsupportservices">
+                    <label for="operationalandsupportservices">Operational and Support Services</label><br>
+                </fieldset><br>
+
+                <fieldset>
+                    <legend><strong>Preferred Contact Method:</strong></legend><br>
+                    <label for="servicetype">Contact Method:</label><br>
+                <input type="checkbox" id="email" name="contactmethod" value="email">
+                <label for="email">Email</label><br>
+                <input type="checkbox" id="phone" name="contactmethod" value="phone">
+                <label for="phone">Phone</label><br>
+                
+                <label for="appointmentdate">Appointment Date:</label><br>
+                <input type="date" id="appointmentdate" name="appointmentdate" required min="2026-01-01"><br>
+
+                <label for="appointmenttime">Appointment Time:</label><br>
+                <input type="time" id="appointmenttime" name="appointmenttime" required><br>
+                
+                <label for="budget">Budget Range (KSHS):</label><br>
+                <input type="number" id="budget" name="budget" min="500" max="100000" step="500" placeholder="Min 500">
+                </fieldset><br>
+
+                <fieldset>
+                    <legend><strong>Additional Information</strong></legend>
+                    <label for="additionalinfo">Additional Information:</label><br>
+                    <textarea id="additionalinfo" name="additionalinfo" rows="4" cols="50" placeholder="Additional Information"></textarea><br>
+
+                    <input type="checkbox" id="terms" name="terms" required>
+                <label for="terms">I agree to the Terms and Conditions</label>
+                </fieldset><br>
+
+                <button type="submit">Submit Registration</button>
+        <button type="reset">Reset Form</button>
+
+            </form>
+            </body>
+</html>
